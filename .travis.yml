@@ -4,6 +4,7 @@ matrix:
       os: osx
       language: generic
       env:
+        - PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
         - PIP=pip
         - CIBW_BUILD=cp27-*
         - CIBW_TEST_COMMAND="echo pytest {project}/tests"
