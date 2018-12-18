@@ -12,6 +12,8 @@ matrix:
         - ${PIP} install cibuildwheel==0.10.0
       script:
         - cibuildwheel --output-dir dist
+        - ${PIP} install twine
+        - which twine
     - name: linux-py27
       language: python
       python: 2.7
@@ -120,8 +122,6 @@ script:
   - pytest
   - make -C docs doctest html
   - cibuildwheel --output-dir dist
-  - ${PIP} install twine
-  - which twine
 deploy:
   - provider: pypi
     # server: https://test.pypi.org/legacy/
